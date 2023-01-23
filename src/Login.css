@@ -1,0 +1,108 @@
+.login {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  background-color: rgb(48, 48, 48);
+  height: 100vh;
+}
+
+.login__logo {
+  color: rgb(180, 219, 75);
+  font-size: 33px;
+}
+
+.login__box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 50px;
+  border: 6px solid black;
+  border-radius: 12px;
+  width: 300px;
+}
+
+.login__header {
+  text-align: center;
+  color: rgb(153, 159, 139);
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+.login__boxEmail > p {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande";
+  font-size: 21px;
+  color: rgb(131, 243, 131);
+  font-weight: 500;
+}
+
+.login__boxEmail > input {
+  padding: 10px;
+  border-radius: 9px;
+  outline: none;
+  background-color: rgba(131, 127, 127, 0.281);
+  color: rgb(198, 235, 198);
+  font-weight: bold;
+  width: 100%;
+}
+
+.login__boxPasswd > p {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande";
+  font-size: 21px;
+  color: rgb(131, 243, 131);
+  font-weight: 500;
+}
+
+.login__boxPasswd > input {
+  padding: 10px;
+  border-radius: 9px;
+  outline: none;
+  background-color: rgba(131, 127, 127, 0.281);
+  color: rgb(198, 235, 198);
+  font-weight: bold;
+  width: 100%;
+}
+
+.login__boxSubmit {
+  margin: 12px 0px;
+}
+
+.login__boxSubmit > button {
+  background-color: rgb(183, 202, 155);
+  padding: 6px 14px;
+  cursor: pointer;
+  border-radius: 11px;
+  border: 1px solid rgba(0, 0, 0, 0.355);
+  transition: all 0.1s ease-in-out;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.login__boxSubmit > button:hover {
+  transform: scale(1.15);
+  border-radius: 14px;
+}
+
+.login__boxSubmit > button:active {
+  font-size: 13px;
+  display: block;
+}
+
+.login__boxForgotPasswd {
+  color: rgb(124, 129, 108);
+  cursor: pointer;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  margin-left: 3px;
+  margin-bottom: 7px;
+}
+
+.login__boxCreateAcc {
+  color: rgb(124, 129, 108);
+  cursor: pointer;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  text-decoration: none;
+  margin-left: 3px;
+  margin-bottom: 7px;
+}

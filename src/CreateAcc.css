@@ -1,0 +1,53 @@
+.createAcc {
+  display: flex;
+  align-items: center;
+  background-color: rgb(48, 48, 48);
+  height: 120vh;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.createAcc__logo {
+  color: rgb(180, 219, 75);
+  font-size: 33px;
+}
+
+.createAcc__box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 50px;
+  border: 6px solid black;
+  border-radius: 12px;
+  width: 300px;
+}
+
+.createAcc_header {
+  text-align: center;
+  color: rgb(153, 159, 139);
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+.createAcc__boxEmail > p,
+.createAcc__boxName > p,
+.createAcc__boxPhno > p,
+.createAcc__boxPassword > p {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande";
+  font-size: 21px;
+  color: rgb(131, 243, 131);
+  font-weight: 500;
+}
+
+.createAcc__boxEmail > input,
+.createAcc__boxName > input,
+.createAcc__boxPhno > input,
+.createAcc__boxPassword > input {
+  padding: 10px;
+  border-radius: 9px;
+  outline: none;
+  background-color: rgba(131, 127, 127, 0.281);
+  color: rgb(198, 235, 198);
+  font-weight: bold;
+  width: 100%;
+}

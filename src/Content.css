@@ -1,0 +1,85 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  margin: auto;
+  border-top: 8px solid rgb(80, 75, 75);
+  background-color: rgb(48, 48, 48);
+}
+
+.content__options {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.content__header {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 30px;
+  padding: 14px;
+  margin: 12px;
+  background-color: rgb(180, 219, 75);
+  border-radius: 10px;
+  width: fit-content;
+}
+
+.content__icon {
+  background-color: rgb(180, 219, 75);
+  color: rgb(41, 38, 38);
+  font-weight: 600;
+  padding: 7px;
+  width: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.content__contentBox {
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+  margin: 10px;
+  padding: 12px;
+  gap: 20px;
+}
+
+.content__criticCard {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 300px;
+  height: 210px;
+  margin: auto;
+  border-radius: 10px;
+  border: 4px solid gray;
+  padding: 10px;
+  transition: all 0.23s ease-in-out;
+  cursor: pointer;
+  background-color: rgba(181, 219, 75, 0.324);
+}
+
+@media (max-width: 706px) {
+  .content__contentBox {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (max-width: 906px) {
+  .content__contentBox {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.content__criticCard:hover {
+  background-color: rgba(181, 219, 75, 0.499);
+  transform: scale(1.12);
+}
+
+.content__criticProf {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.content__gameRating {
+  display: flex;
+}

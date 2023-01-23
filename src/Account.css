@@ -1,0 +1,51 @@
+.account {
+  background-color: rgb(48, 48, 48);
+  height: 100vh;
+}
+
+.account_box {
+  background-color: rgba(143, 146, 146, 0.427);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 32px;
+}
+
+.account__img {
+  display: flex;
+  gap: 11px;
+  align-items: center;
+  margin-left: 58px;
+  margin-bottom: 10px;
+}
+
+.account__name {
+  font-size: 23px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: azure;
+  font-weight: bolder;
+}
+
+.account_userDetails {
+  margin-left: 56px;
+  border: 2px solid grey;
+  width: 66%;
+  padding: 21px;
+  border-radius: 22px;
+  border: 5px solid rgb(219, 218, 218);
+}
+
+.account_userDetails > h3 {
+  color: rgb(2, 2, 2);
+}
+
+.account__phno,
+.account__email {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 23px;
+  margin-bottom: 12px;
+  font-weight: 900;
+  color: rgb(20, 20, 20);
+}
