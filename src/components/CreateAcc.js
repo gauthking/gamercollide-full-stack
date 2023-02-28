@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { authentication, db } from './firebase';
-import { collection, addDoc, getDocs } from "firebase/firestore";
+import { collection, addDoc, getDocs, onSnapshot } from "firebase/firestore";
 import { Link, useNavigate } from 'react-router-dom';
 import "../CreateAcc.css";
 
@@ -10,6 +10,7 @@ function CreateAcc() {
     const [name, setName] = useState("");
     const [phno, setPhno] = useState("");
     const [password, setPassword] = useState("");
+
     const navigate = useNavigate();
     const createAcc = e => {
         e.preventDefault();
@@ -17,7 +18,7 @@ function CreateAcc() {
             authentication.currentUser.displayName = name;
             navigate("/login");
             addAcc();
-
+            console.log(authentication.currentUser.displayName)
         }).catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
@@ -36,6 +37,7 @@ function CreateAcc() {
                 imgsrc: "https://avatars.githubusercontent.com/u/90638995?v=4"
             }
         )
+
     }
     return (
         <div className='createAcc'>

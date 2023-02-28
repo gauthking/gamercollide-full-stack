@@ -1,24 +1,31 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { IconButton, Avatar } from '@mui/material';
 import "../Content.css";
 import AddIcon from '@mui/icons-material/Add';
 import axios from "./axios"
 import { Link } from "react-router-dom";
 import Loader from './Loader';
-import { authentication } from './firebase';
+import { authentication, db } from './firebase';
+import { collection, getDocs, onSnapshot } from 'firebase/firestore';
+import { AppConfig } from '../context/AppConfig';
 function Content() {
     const [data, setData] = useState([]);
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false);
+    const { setCurrentUser, currentUser } = useContext(AppConfig)
+
     useEffect(() => {
         async function fetchData() {
             setLoading(true)
             const req = await axios.get("/gamercollide/getdata");
             setData(req.data);
             console.log(req)
-            setLoading(false)
+            setLoading(false);
+
         }
         fetchData();
-    }, [])
+
+
+    }, []);
     return (
         <div className='content'>
             <div className="content__options">
@@ -41,6 +48,7 @@ function Content() {
                             <p>⭐</p>
                         ))}</div>
                         <div className='content__gameReview'>{dat.descData.slice(0, 50) + '....'}</div>
+                        <button className='content__readMorebtn'>Read More</button>
                     </div>
                 ))}
 

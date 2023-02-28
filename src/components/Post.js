@@ -1,17 +1,19 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "../Post.css"
 import ReactStars from "react-rating-stars-component";
 import axios from "./axios"
 import { useNavigate } from 'react-router-dom';
-import { authentication } from './firebase';
+import { authentication, db } from './firebase';
 import { onAuthStateChanged } from 'firebase/auth';
-
+import { AppConfig } from '../context/AppConfig';
+import { collection, getDocs } from 'firebase/firestore';
 
 function Post() {
     const [gname, setGname] = useState("");
     const [gdesc, setGdesc] = useState("");
     const [grating, setGRating] = useState();
     const [userlog, setUserlog] = useState(true);
+    const { currentUser, setCurrentUser } = useContext(AppConfig)
     useEffect(() => {
         onAuthStateChanged(authentication, (user) => {
             if (user) {
@@ -20,12 +22,25 @@ function Post() {
                 setUserlog(false);
             }
         });
+        const fetchUserName = async () => {
+            const querySnapshot = await getDocs(collection(db, "accounts"));
+            querySnapshot.forEach((doc) => {
+                // doc.data() is never undefined for query doc snapshots
+                // console.log(doc.data().name)
+                // console.log(authentication.currentUser.email)
+                if (doc.data().email === authentication.currentUser.email) {
+                    setCurrentUser(doc.data().name);
+                    console.log(currentUser)
+                }
+            });
+        }
+        fetchUserName();
     }, []);
     const navigate = useNavigate();
-
+    console.log(currentUser)
     const post = () => {
         axios.post("/gamercollide/postdata", {
-            userName: authentication.currentUser.displayName,
+            userName: currentUser,
             gameName: gname,
             descData: gdesc,
             rating: grating,
@@ -34,7 +49,6 @@ function Post() {
         navigate('/')
     }
 
-    console.log(gname)
 
     const ratingChanged = (newRating) => {
         console.log(newRating);

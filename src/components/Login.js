@@ -1,15 +1,18 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import "../Login.css";
-import { authentication } from './firebase';
+import { authentication, db } from './firebase';
 import { signInWithEmailAndPassword } from "firebase/auth"
+import { collection, getDoc, doc, onSnapshot } from 'firebase/firestore';
+import { AppConfig } from '../context/AppConfig';
 
 
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
-    const login = e => {
+
+    const login = (e) => {
         e.preventDefault();
         signInWithEmailAndPassword(authentication, email, password)
             .then(() => {
@@ -25,7 +28,11 @@ function Login() {
                 console.log(errorMessage);
             });
 
+
+
+
     }
+
     return (
         <div className='login'>
             <Link to="/" style={{ textDecoration: 'none' }}>

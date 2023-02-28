@@ -3,8 +3,9 @@ import { getAuth } from 'firebase/auth'
 import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
+require('dotenv').config();
 const firebaseConfig = {
-    apiKey: "AIzaSyD_b_ng4TIE5c95mwGc6MoQ7ZwVxm0_z6Y",
+    apiKey: process.env.FIREBASE_API_KEY,
     authDomain: "gamercollide-f72ca.firebaseapp.com",
     projectId: "gamercollide-f72ca",
     storageBucket: "gamercollide-f72ca.appspot.com",
