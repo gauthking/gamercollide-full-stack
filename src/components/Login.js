@@ -1,10 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
-import "../Login.css";
+import "./Login.css";
 import { authentication, db } from './firebase';
 import { signInWithEmailAndPassword } from "firebase/auth"
-import { collection, getDoc, doc, onSnapshot } from 'firebase/firestore';
-import { AppConfig } from '../context/AppConfig';
+
 
 
 function Login() {

@@ -3,7 +3,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { authentication, db } from './firebase';
 import { collection, addDoc, getDocs, onSnapshot } from "firebase/firestore";
 import { Link, useNavigate } from 'react-router-dom';
-import "../CreateAcc.css";
+import "./CreateAcc.css";
 
 function CreateAcc() {
     const [email, setEmail] = useState("");

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import "../Post.css"
+import "./Post.css"
 import ReactStars from "react-rating-stars-component";
 import axios from "./axios"
 import { useNavigate } from 'react-router-dom';

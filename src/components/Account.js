@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { collection, getDocs, onSnapshot } from "firebase/firestore";
 import { authentication, db } from './firebase';
-import "../Account.css"
+import "./Account.css"
 import { Avatar } from '@mui/material';
 import { Link } from 'react-router-dom';
 

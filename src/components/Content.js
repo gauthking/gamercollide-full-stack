@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { IconButton, Avatar } from '@mui/material';
-import "../Content.css";
+import "./Content.css";
 import AddIcon from '@mui/icons-material/Add';
 import axios from "./axios"
 import { Link } from "react-router-dom";
